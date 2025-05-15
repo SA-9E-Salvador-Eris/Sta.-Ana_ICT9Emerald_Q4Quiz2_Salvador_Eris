@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <title>Q4 Quiz 2</title>
+
+   <style>
+      #cover{
+         height:300px;
+         width: 230px;
+      }
+      .row{
+         display: flex;
+      }
+
+      button {
+         padding: 25px 25px;
+         cursor: pointer;
+         color: #fff;
+         background-color: #04AA6D;
+         border: none;
+         border-radius: 25px;
+         box-shadow: 0 10px darkblue;
+      }
+
+      button:hover {background-color: #3e8e41}
+
+      button:active {
+         background-color: #3e8e41;
+         box-shadow: 0 5px #666;
+         transform: translateY(4px);
+      }
+      h1{
+         background-color: #0addf5;
+         width: 930px;
+         font-family: Consolas;
+         margin-top:150px;
+      }
+      #Grade1, #Grade2, #Grade3{
+         background-color: lightgray;
+         font-size: 40px;
+         text-align: center;
+         color: darkblue;
+         width: 260px;
+         font-family: Consolas;
+         text-decoration: underline;
+      }
+
+      p {
+         font-family: cursive;
+         font-size: 20px;
+      }
+
+   </style>
+
+</head>
+<body>
+<center>
+   <h1>Score Analyzer (1-5 base scoring)</h1>
+   <details ontoggle="message()">
+      <summary>Click Me</summary>
+      <i id="instructions"></i>
+   </details>
+<script>
+   function message(){
+   document.getElementById("instructions").innerHTML = "Enter your grades in the following subjects.";
+}
+</script>
+</center>
+
+<br>
+<center><b><a href="index.html">Home Page</a></b></center>
+
+<center>
+<div class="col-md-6">
+   <form action="#">
+      <div class="row">
+         <div class="col-md-4">
+            
+               <button type="button" class="btn btn-info" onclick="science()">
+               <img src="https://static.wikia.nocookie.net/plantsvszombies/images/2/22/PvZC_Zomboss%403x.png/revision/latest?cb=20161028001113" id="cover">
+               <p >Science</p>
+               </button>
+           
+               <br><br>
+               <div id="gr1"></div>
+            
+         </div>
+         <div class="col-md-4">
+            <button type="button" class="btn btn-info" onclick="math()">
+               <img src="https://cloudfront-us-east-1.images.arcpublishing.com/gray/BQ3EF27SINO53ALTEJRW7SVQGU.jpg" id="cover">
+               <p>Mathematics</p>
+            </button>
+
+            <br><br>
+               <div id="gr2"></div>
+
+         </div>
+         <div class="col-md-4">
+            <button type="button" class="btn btn-info" onclick="english()">
+               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9H62LiJ8RVtbb4cBzC-kR2dciv6x0OyMEhA&s" id="cover">
+               <p>English/Literature</p>
+            </button>
+
+            <br><br>
+               <div id="gr3"></div>
+         </div>
+
+         <div class="col-md-4">
+            
+               <button type="button" class="btn btn-info" onclick="ss()">
+               <img src="https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc2MjcxOTYzNjMwMzQ3NDM3/famous-historians-and-their-contributions.jpg" id="cover">
+               <p >Social Studies</p>
+               </button>
+           
+               <br><br>
+               <div id="gr4"></div>
+            
+         </div>
+         <div class="col-md-4">
+            <button type="button" class="btn btn-info" onclick="filipino()">
+               <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8441ffd7ec64a9d2456064b4c5" id="cover">
+               <p>Filipino</p>
+            </button>
+
+            <br><br>
+               <div id="gr5"></div>
+
+         </div>
+         <div class="col-md-4">
+            <button type="button" class="btn btn-info" onclick="Wizardry()">
+               <img src="https://contentful.harrypotter.com/usf1vwtuqyxm/1dmmUJzpRcWaUmMOCu8QwO/7e013145694566076d47fd004fd604c2/AlbusDumbledore_WB_F6_DumbledoreSittingInChair_Promo_080615_Port.jpg?q=75&fm=jpg&w=2560" id="cover">
+               <p>Wizardry</p>
+            </button>
+
+            <br><br>
+               <div id="gr6"></div>
+         </div>
+      </div>
+
+      <br>
+
+      <button type="button" class="btn btn-info" onclick="AVG()">
+      Get Rating
+      </button>
+
+   </form>
+</div>
+
+<script>
+   function science(){
+      document.getElementById("gr1").innerHTML = 
+      "<input type='number' class='form-control' id='Grade1' max='5' oninput='limitInput(this)'>";
+   }
+   function math(){
+      document.getElementById("gr2").innerHTML = 
+      "<input type='number' class='form-control' id='Grade2' max='5' oninput='limitInput(this)'>";
+   }
+   function english(){
+      document.getElementById("gr3").innerHTML = 
+      "<input type='number' class='form-control' id='Grade3' max='5' oninput='limitInput(this)'>";
+   }
+
+   function ss(){
+      document.getElementById("gr4").innerHTML = 
+      "<input type='number' class='form-control' id='Grade4' max='5' oninput='limitInput(this)'>";
+   }
+   function filipino(){
+   document.getElementById("gr5").innerHTML = 
+   "<input type='number' class='form-control' id='Grade5' max='5' oninput='limitInput(this)'>";
+}
+
+function Wizardry(){
+   document.getElementById("gr6").innerHTML = 
+   "<input type='number' class='form-control' id='Grade6' max='5' oninput='limitInput(this)'>";
+}
+
+
+   function AVG(){
+   var science = Number(document.getElementById("Grade1").value);
+   var math = Number(document.getElementById("Grade2").value);
+   var english = Number(document.getElementById("Grade3").value);
+   var ss = Number(document.getElementById("Grade4").value);
+   var filipino = Number(document.getElementById("Grade5").value);
+   var Wizardry = Number(document.getElementById("Grade6").value);
+
+   var ave = ((science + math + english + ss + filipino + Wizardry)/6).toFixed(2);
+
+   switch (true) {
+   case (ave >= 3.5 && ave <= 4):
+        alert("Your average is " + ave + " - Excellent!");
+        break;
+
+   case (ave >= 3.0 && ave <= 3.4):
+        alert("Your average is " + ave + " - Above Satisfactory");
+        break;
+
+   case (ave >= 2.5 && ave <= 2.9):
+        alert("Your average is " + ave + " - Satisfactory");
+        break;
+
+   case (ave >= 2 && ave <= 2.4):
+        alert("Your average is " + ave + " - Needs Improvement");
+        break;
+
+   case (ave >= 1.5 && ave <= 1.9):
+        alert("Your average is " + ave + " - Poor");
+        break;
+
+   case (ave >= 0 && ave <= 1.4):
+        alert("Your average is " + ave + " - Failing");
+        break;
+    default:
+        alert("HOW?? THAT'S NOT MATHEMATICALLY POSSIBLE!!! WHAT LEVEL OF IDIOT ARE YOU??");
+
+   }
+
+   }
+
+   
+   
+</script>
+      <br>
+
+      <p id = "source">Note: <i>Grading Criteria and Equivalents can vary depending on school or district.</i></p>
+      
+      <hr>
+      <p>@ERIS SALVADOR</p>
+     
+
+</center>
+</body>
+</html>
+
